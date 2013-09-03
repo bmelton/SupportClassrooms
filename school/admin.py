@@ -7,3 +7,4 @@ class SchoolAdmin(admin.ModelAdmin):
     # list_filter  = ("party","district","state",)
 
 admin.site.register(School, SchoolAdmin)
+admin.site.register(State)

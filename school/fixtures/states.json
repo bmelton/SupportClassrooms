@@ -1,0 +1,452 @@
+[
+{
+    "pk": 1, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "AL", 
+        "name": "Alabama"
+    }
+},
+{
+    "pk": 2, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "AK", 
+        "name": "Alaska"
+    }
+},
+{
+    "pk": 3, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "AZ", 
+        "name": "Arizona"
+    }
+},
+{
+    "pk": 4, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "AR", 
+        "name": "Arkansas"
+    }
+},
+{
+    "pk": 5, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "CA", 
+        "name": "California"
+    }
+},
+{
+    "pk": 6, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "CO", 
+        "name": "Colorado"
+    }
+},
+{
+    "pk": 7, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "CT", 
+        "name": "Connecticut"
+    }
+},
+{
+    "pk": 8, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "DE", 
+        "name": "Delaware"
+    }
+},
+{
+    "pk": 9, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "FL", 
+        "name": "Florida"
+    }
+},
+{
+    "pk": 10, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "GA", 
+        "name": "Georgia"
+    }
+},
+{
+    "pk": 11, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "HI", 
+        "name": "Hawaii"
+    }
+},
+{
+    "pk": 12, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "ID", 
+        "name": "Idaho"
+    }
+},
+{
+    "pk": 13, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "IL", 
+        "name": "Illinois"
+    }
+},
+{
+    "pk": 14, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "IN", 
+        "name": "Indiana"
+    }
+},
+{
+    "pk": 15, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "IA", 
+        "name": "Iowa"
+    }
+},
+{
+    "pk": 16, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "KS", 
+        "name": "Kansas"
+    }
+},
+{
+    "pk": 17, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "KY", 
+        "name": "Kentucky"
+    }
+},
+{
+    "pk": 18, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "LA", 
+        "name": "Louisiana"
+    }
+},
+{
+    "pk": 19, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "ME", 
+        "name": "Maine"
+    }
+},
+{
+    "pk": 20, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "MD", 
+        "name": "Maryland"
+    }
+},
+{
+    "pk": 21, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "MA", 
+        "name": "Massachussetts"
+    }
+},
+{
+    "pk": 22, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "MI", 
+        "name": "Michigan"
+    }
+},
+{
+    "pk": 23, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "MN", 
+        "name": "Minnesota"
+    }
+},
+{
+    "pk": 24, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "MS", 
+        "name": "Mississippi"
+    }
+},
+{
+    "pk": 25, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "MO", 
+        "name": "Missouri"
+    }
+},
+{
+    "pk": 26, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "MT", 
+        "name": "Montana"
+    }
+},
+{
+    "pk": 27, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "NE", 
+        "name": "Nebraska"
+    }
+},
+{
+    "pk": 28, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "NV", 
+        "name": "Nevada"
+    }
+},
+{
+    "pk": 29, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "NH", 
+        "name": "New Hampshire"
+    }
+},
+{
+    "pk": 30, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "NJ", 
+        "name": "New Jersey"
+    }
+},
+{
+    "pk": 31, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "NM", 
+        "name": "New Mexico"
+    }
+},
+{
+    "pk": 32, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "NY", 
+        "name": "New York"
+    }
+},
+{
+    "pk": 33, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "NC", 
+        "name": "North Carolina"
+    }
+},
+{
+    "pk": 34, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "ND", 
+        "name": "North Dakota"
+    }
+},
+{
+    "pk": 35, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "OH", 
+        "name": "Ohio"
+    }
+},
+{
+    "pk": 36, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "OK", 
+        "name": "Oklahoma"
+    }
+},
+{
+    "pk": 37, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "OR", 
+        "name": "Oregon"
+    }
+},
+{
+    "pk": 38, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "PA", 
+        "name": "Pennsylvania"
+    }
+},
+{
+    "pk": 39, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "RI", 
+        "name": "Rhode Island"
+    }
+},
+{
+    "pk": 40, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "SC", 
+        "name": "South Carolina"
+    }
+},
+{
+    "pk": 41, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "SD", 
+        "name": "South Dakota"
+    }
+},
+{
+    "pk": 42, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "TN", 
+        "name": "Tennessee"
+    }
+},
+{
+    "pk": 43, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "TX", 
+        "name": "Texas"
+    }
+},
+{
+    "pk": 44, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "UT", 
+        "name": "Utah"
+    }
+},
+{
+    "pk": 45, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "VT", 
+        "name": "Vermont"
+    }
+},
+{
+    "pk": 46, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "VA", 
+        "name": "Virginia"
+    }
+},
+{
+    "pk": 47, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "WA", 
+        "name": "Washington"
+    }
+},
+{
+    "pk": 48, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "WV", 
+        "name": "West Virginia"
+    }
+},
+{
+    "pk": 49, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "WI", 
+        "name": "Wisconsin"
+    }
+},
+{
+    "pk": 50, 
+    "model": "school.state", 
+    "fields": {
+        "active": false, 
+        "code": "WY", 
+        "name": "Wyoming"
+    }
+}
+]
