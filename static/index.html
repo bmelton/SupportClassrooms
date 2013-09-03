@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+    <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Support Classrooms</title>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/vendor/custom.modernizr.js"></script>
+    </head>
+    <body>
+        <script type="text/x-handlebars">
+            <div id="header">
+                <div class="row">
+                    <div class="large-6 columns">
+                        {{#link-to 'index'}}<img src="img/logo.png" />{{/link-to}}
+                    </div>
+                    <div class="large-6 columns">
+                        <nav>
+                            <ul>
+                                <li>{{#link-to 'news'}}News{{/link-to}}</li>
+                                <li>{{#link-to 'about'}}About{{/link-to}}</li>
+                                <li>{{#link-to 'resources'}}Resources{{/link-to}}</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            {{outlet}}
+            <div id="footer">
+                <div class="row">
+                    <div id="footer_content" class="large-12 columns">
+                        &copy; 2013 SupportClassrooms
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars" data-template-name="index">
+            <div class="row" id="teaser" style="background: url('http://placekitten.com/g/1000/300') no-repeat;">
+                <div class="large-8 columns">
+                    <h3 style="color: #ffffcc; text-shadow: 1px 1px #000;">Teachers collectively spend $1.3 billion dollars of their own money to ensure that our children have their
+                    necessities provided.</h3>
+                </div>
+                <div class="large-4 columns">
+                    <img id="click_to_help" src="img/click_to_help.png" />
+                </div>
+            </div>
+            <div class="row" id="content">
+                <div class="large-4 columns">
+                    <strong>Column 1</strong>
+                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                </div>
+                <div class="large-4 columns">
+                    <strong>Column 2</strong>
+                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                </div>
+                <div class="large-4 columns">
+                    <strong>Column 3</strong>
+                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars" id="news" data-template-name="news">
+            <div class="row">
+                <div class="large-12 columns">
+                    <h3 class="subheader">News</h3>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars" id="resources">
+            <div class="row">
+                <div class="large-12 columns">
+                    <h3 class="subheader">Resources</h3>
+                    {{#each model}}
+                        <div large-12 columns">
+                                <hr />
+                            <p>
+                                <a target="_blank" {{bindAttr href="url"}}>{{ title }}</a><br />
+                                <cite><a target="_blank" {{bindAttr href="source_url"}}>{{source}}</a>, {{ date }}</cite>
+                            </p>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </script>
+        <script type="text/x-handlebars" id="about">
+            <div class="row">
+                <div class="large-12 columns">
+                    <dl class="sub-nav">
+                        <dd>{{#link-to 'directors'}}Directors{{/link-to}}</dd>
+                        <dd>{{#link-to 'officers'}}Officers{{/link-to}}</dd>
+                        <dd>{{#link-to 'about.faq'}}FAQ{{/link-to}}</dd>
+                    </dl>
+
+                    {{outlet}}
+                </div>
+            </div>
+        </script>
+            
+        <script type="text/x-handlebars" data-template-name="about/index" id="about.index">
+            <h3 class="subheader">Mission</h3 class="subheader">
+            <p>Support Classrooms is a 501(c)(3) designed to aid and further education and 
+            encourage stronger relationships between parents, teachers and education faculty.</p>
+
+            <p>Teachers spend as much as $1,000 out of their own pockets on necessity items 
+            including school supplies, field trips, clothing for children in need, and food and
+            snacks.</p>
+
+            <p>Collectively, teachers spend up to $1.3 billion on these sorts of supplies.  
+            Support Classrooms aims to end this.</p>
+        </script>
+
+        <script type="text/x-handlebars" id="directors">
+            <h3 class="subheader">Board of Directors</h3 class="subheader">
+            {{#each model}}
+                <div class="panel large-3 pull-1 large-offset-1 columns">
+                    {{name}}<br />
+                    {{title}}<br />
+                </div>
+            {{/each}}
+        </script>
+
+        <script type="text/x-handlebars" id="officers">
+            <h3 class="subheader">Officers</h3 class="subheader">
+            {{#each model}}
+                <div class="panel large-3 pull-1 large-offset-1 columns">
+                    {{name}}<br />
+                    {{title}}<br />
+                </div>
+            {{/each}}
+        </script>
+        
+        <script type="text/x-handlebars" id="about.faq" data-template-name="about/faq">
+            <h3 class="subheader">FAQ</h3 class="subheader">
+            <p>No content available</p>
+            <hr />
+        </script>
+
+        <script type="text/x-handlebars" id="about.mission" data-template-name="about/mission">
+            <h3 class="subheader">Mission</h3 class="subheader">
+            <p>Support Classrooms is a 501(c)(3) designed to aid and further education and 
+            encourage stronger relationships between parents, teachers and education faculty.</p>
+
+            <p>Teachers spend as much as $1,000 out of their own pockets on necessity items 
+            including school supplies, field trips, clothing for children in need, and food and
+            snacks.</p>
+
+            <p>Collectively, teachers spend up to $1.3 billion on these sorts of supplies.  
+            Support Classrooms aims to end this.</p>
+        </script>
+
+        <script src="js/libs/jquery-1.9.1.js"></script>
+        <script src="js/libs/handlebars-1.0.0.js"></script>
+        <script src="js/libs/ember-1.0.0.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            document.write('<script src=' +
+            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+            '.js><\/script>')
+        </script>
+        <script src="js/foundation.min.js"></script>
+        <!--
+        <script src="js/foundation/foundation.topbar.js"></script>
+        <script src="js/foundation/foundation.js"></script>
+        <script src="js/foundation/foundation.alerts.js"></script>
+        <script src="js/foundation/foundation.clearing.js"></script>
+        <script src="js/foundation/foundation.cookie.js"></script>
+        <script src="js/foundation/foundation.dropdown.js"></script>
+        <script src="js/foundation/foundation.forms.js"></script>
+        <script src="js/foundation/foundation.joyride.js"></script>
+        <script src="js/foundation/foundation.magellan.js"></script>
+        <script src="js/foundation/foundation.orbit.js"></script>
+        <script src="js/foundation/foundation.placeholder.js"></script>
+        <script src="js/foundation/foundation.reveal.js"></script>
+        <script src="js/foundation/foundation.section.js"></script>
+        <script src="js/foundation/foundation.tooltips.js"></script>
+        -->
+        <script>
+            $(document).foundation();
+        </script>
+    </body>
+</html>
