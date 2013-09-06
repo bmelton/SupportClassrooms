@@ -3,6 +3,10 @@ html, body {
     background: #ffffff;
 }
 
+.selected { 
+    background-color: red;
+}
+
 #click_to_help { 
     margin: 50px 0;
 }
@@ -16,6 +20,13 @@ html, body {
     margin: 0px auto 30px auto;
     background-color: #e0e0e0;
     height: 60px;
+}
+
+.searchRow { 
+    padding: 10px 0 10px 10px; 
+}
+.searchRow:hover { 
+    background-color: #e3e3e3;
 }
 
 ul#about_nav.button-group li a.active { 

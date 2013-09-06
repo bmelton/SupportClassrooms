@@ -5,6 +5,3 @@ class OfficerResource(ModelResource):
     class Meta:
         queryset = Officer.objects.all()
         resource_name = 'officers'
-
-
-

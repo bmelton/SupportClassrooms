@@ -6,5 +6,7 @@ class StudyResource(ModelResource):
         queryset = Resource.objects.all()
         resource_name = 'study'
 
+    def determine_format(self, request):
+        return "application/json"
 
 

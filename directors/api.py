@@ -5,6 +5,3 @@ class DirectorResource(ModelResource):
     class Meta:
         queryset = Director.objects.all()
         resource_name = 'directors'
-
-
-

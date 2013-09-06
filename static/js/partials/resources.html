@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="large-12 columns">
+        <h3 class="subheader">Resources</h3>
+        <div class="large-12 columns" data-ng-repeat="resource in resources">
+            <hr />
+            <p><a target="_blank" href="{{ resource.url }}">{{ resource.title }}</a><br />
+            <cite>
+                <a target="_blank" href="{{ resource.source_url }}">{{ resource.source }}</a> 
+                - {{ resource.date }}</a>
+            </cite>
+        </div>
+    </div>
+</div>
