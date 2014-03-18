@@ -12,14 +12,19 @@
 <div class="row" id="content">
     <div class="large-12 columns">
         <div class="large-12 columns">
-            Search for your child's school to get started: 
-            <input type="text" ng-enter="" data-ng-model="name" placeholder="Enter school name or zip code" />
-            <div class="container">
-                <ul class="no-bullet">
-                    <li data-ng-repeat="school in schools | filter:name | orderBy:'name'">{{ school.name }}</li>
-                </ul>
+            <p>Search for your child's school to get started: </p>
+            <p>{{ selectingSchools }}</p>
+            <form ng-submit="submitForm()">
+                <input type="text" ng-enter="" data-ng-model="name" placeholder="Enter school name or zip code" />
+            </form>
+            <div class="container" ng-mouseenter="fixMouse()">
+                <span class="results_summary">Results for: <strong>{{ name }}</strong></span>
+                <hr />
+                <div id="school_{{ school.id }}" class="result large-12 columns" data-ng-click="selectItem(school)" data-ng-repeat="school in schools | filter:name | orderBy:'name'">
+                    <div class="large-6 columns">{{ school.name }} </div>
+                    <div class="large-6 columns hidden">Hi</div>
+                </div>
             </div>
-            <button href="" ng-click="submitForm()" />
         </div>
     </div>
 </div>

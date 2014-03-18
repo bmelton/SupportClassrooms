@@ -1,11 +1,14 @@
-var App = angular.module('App', ['restangular']).controller('GlobalController', globalController);
+var App = angular.module('App', ['restangular','ngRoute',]).controller('GlobalController', globalController);
 
 App.config(function ($routeProvider) { 
     $routeProvider
-        .when('/', 
-            { 
+        .when('/', { 
                 controller: 'IndexController',
-                templateUrl: '/static/js/partials/index.html'
+                templateUrl: '/static/partials/index.html'
+            })
+        .when('/school/:id', {
+                controller: 'SchoolController',
+                templateUrl: '/static/partials/school.html'
             })
         .when('/about', 
             {
@@ -58,15 +61,106 @@ App.config(function(RestangularProvider) {
     });
 });
 
+App.directive('fixmouse', function() { 
+    element.bind('mouseenter', function(event) { 
+        console.log("Entered");
+    });
+});
+
 App.directive('ngEnter', function() { 
     return function(scope, element, attrs) { 
+        list = new Array();
         element.bind("keyup", function(event) { 
-            scope.$apply(function() { 
-                scope.$eval(attrs.ngEnter);
-                if(scope.name.length > 3) { 
-                    scope.submitForm();
+            /* 
+            // This shit isn't working right, so I'm going to leave it alone for now.
+            if(event.which === 27) { // Esc key
+                // $(".focused").removeClass("focused");
+                list = new Array();
+                scope.$apply(function() { 
+                    scope.selectingSchools = false;
+                    scope.selectIndex = null;
+                    delete scope.selectIndex;
+                });
+            };
+            */
+
+            /*
+            if(event.which === 13) { // Enter
+                console.log("ENTER!");
+            };
+            */
+
+            /*
+            if(event.which === 40 || event.which === 38) { // Up or Down arrows
+                // $(".focused").removeClass("focused");
+                if(scope.formSubmitted) { 
+                    $("div.result").children().not(".hidden").each(function(index, item) { 
+                        list[index] = item;
+                    });
+                    scope.$apply(function() {
+                        scope.selectingSchools = true;
+                        if(typeof(scope.selectIndex) == 'undefined')
+                            scope.selectIndex = 0;
+                        else {
+                            if(event.which === 40) { // Down arrow
+                                // prevent from going bigger than the list.
+                                if(scope.selectIndex > list.length-2) {
+                                    scope.selectingSchools = false;
+                                } else { 
+                                    scope.selectIndex++;
+                                    scope.selectingSchools = true;
+                                }
+                            }
+                            else if(event.which === 38) { // Up arrow
+                                // prevent from going smaller than zero.
+                                if(scope.selectIndex <= 0) { 
+                                    scope.selectingSchools = false;
+                                } else { 
+                                    scope.selectIndex--;
+                                    scope.selectingSchools = true;
+                                }
+                            }
+                        }
+                        $(list[scope.selectIndex]).parent().addClass("focused");
+                    });
+                };
+            };
+            */
+
+            /*
+            if(event.which === 8) {  // Delete/Backspace key
+                if(typeof(scope.name) == 'undefined') { 
+                    // Empty shits out.
+                    scope.$apply(function() { 
+                        scope.schools = null;
+                        scope.formSubmitted = false;
+                    });
+                } else if(scope.name == "") {
+                    scope.$apply(function() { 
+                        scope.schools = null;
+                        scope.formSubmitted = false;
+                    });
+                } else { 
+                    scope.$apply(function() { 
+                        scope.submitForm();
+                    });
                 }
-            });
+            }
+            */
+
+            if(typeof(scope.name) == 'undefined') { 
+                // bail. Don't bother if name is empty.
+            } else { 
+                scope.$apply(function() { 
+                    scope.$eval(attrs.ngEnter);
+                    if(scope.name.length == 0) { 
+                        scope.formSubmitted = false;
+                    }
+                    if(scope.name.length > 3) { 
+                        scope.submitForm();
+                    }
+                });
+            };
         });
     }
 });
@@ -74,28 +168,45 @@ App.directive('ngEnter', function() {
 var controllers = {};
 
 function globalController($scope) { 
-    $scope.greeting = 'Hola';
     console.log("Global");
+    $scope.formSubmitted = false;
+    $scope.selectIndex = 0;
 };
+
+controllers.SchoolController = function($scope, $http, $routeParams) { 
+    var url = "/api/schools/" + $routeParams.id + "/";
+    $http({method: 'GET', url: url})
+        .success(function(data, status, headers, config) {
+            $scope.school = data;
+            $scope.mapStyle = {
+                'background'        : 'url(' + $scope.school.background + ') no-repeat',
+                'background-size'   : '100% auto',
+            };
+            console.log($scope.mapStyle);
+        });
+}
 
 controllers.IndexController = function($scope, Restangular) { 
     $scope.submitForm = function() { 
         Restangular.all('schools/search/?q=' + $scope.name, {'q': $scope.name}).getList().then(function(schools) { 
             $scope.schools = schools;
-            console.log(schools);
+            $scope.formSubmitted = true;
         });
-        /*
-        $.get('/api/v1/schools/search/?q=north', function(data) { 
-            console.log(data);
-        });
-        */
-        console.log("YAY");
     };
-    /*
-    Restangular.all('schools').getList().then(function(schools) { 
-        $scope.schools = schools;
-    });
-    */
+
+    $scope.selectItem = function($index) { 
+        var el = $("#school_" + $index.id);
+        if(el.hasClass("selected"))
+            el.removeClass("selected");
+        else 
+            el.addClass("selected");
+        // $("#school_" + $index.id).addClass("selected");
+    };
+
+    $scope.fixMouse = function() { 
+        // $(".focused").removeClass("focused");
+        // console.log("FixMouse");
+    };
 }
 
 controllers.ResourcesController = function ($scope, Restangular) { 
@@ -107,6 +218,17 @@ controllers.ResourcesController = function ($scope, Restangular) {
 controllers.DirectorController = function ($scope, Restangular) { 
     Restangular.all('directors').getList().then(function(directors) { 
         $scope.directors = directors;
+    });
+}
+
+controllers.GlobalController = function($scope, Restangular) { 
+    $scope.selectIndex = 0;
+    $scope.selectingSchools = false;
+
+    // TODO - remove this.
+    Restangular.all('schools/search/?q=south').getList().then(function(schools) { 
+        $scope.schools = schools;
+        $scope.formSubmitted = true;
     });
 }
 

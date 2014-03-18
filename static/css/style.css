@@ -3,10 +3,6 @@ html, body {
     background: #ffffff;
 }
 
-.selected { 
-    background-color: red;
-}
-
 #click_to_help { 
     margin: 50px 0;
 }
@@ -88,4 +84,45 @@ dl.sub-nav dd a.active {
 }
 
 #footer div { 
+}
+
+.container div.result { 
+    padding: 5px 0 5px 5px;
+    border: 1px solid transparent;
+}
+
+.container div.result:hover,
+.container div.result.focused { 
+    background-color: #e3e3e3;
+    cursor: pointer;
+}
+
+.container div.result div.hidden { 
+    visibility: hidden;
+}
+
+.container div.result:hover div.hidden ,
+.container div.result.focused div.hidden { 
+    visibility: visible;
+}
+
+div#content div div p { 
+    margin: 0 0 5px 0;
+}
+
+.selected, 
+container div.result.selected { 
+    -webkit-border-radius: 3px; 
+       -moz-border-radius: 3px; 
+           -border-radius: 3px; 
+    background-color: #daf6b5;
+    border: solid 1px #29671d;
+}
+.container div.result.selected:hover, 
+.selected:hover { 
+    -webkit-border-radius: 3px; 
+       -moz-border-radius: 3px; 
+           -border-radius: 3px; 
+    background-color: #daf6b5;
+    border: solid 1px #29671d;
 }

@@ -1,0 +1,86 @@
+ul.nav.navbar-nav li { 
+}
+
+#map-search-div .form-control, .form-control + span .btn{
+    border: 2px solid #4e8ab3;
+}
+
+#map-search-div .input-group-addon { 
+    background-color: #4e8ab3;
+    color: white;
+    border: 1px solid #4e8ab3;
+}
+
+#map-search-div { 
+    width: 500px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.list-item .list-group-item {
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
+body { 
+    background-color: #f7f3e4;
+}
+
+h1.list { 
+    color: #82b17e;
+    font-size: 24px;
+}
+
+#location-bar { 
+    background-color: #4b89b5;
+    border-bottom: 3px solid #3c6e91;
+    height: 126px;
+    text-align: center;
+}
+
+#location-bar h1 { 
+    font-family: Athelas, Serif;
+    color: white;
+    text-shadow: 1px 1px #3a3f42;
+    font-size: 46px;
+    margin-top: 20px;
+}
+
+#location-bar h4 { 
+    font-family: Athelas, Serif;
+    color: white;
+    text-shadow: 1px 1px #3a3f42;
+    font-size: 18pt;
+    margin-top: -10px;
+}
+
+#map-canvas { 
+    border-top: 1px solid #999;
+    height: 226px;
+    margin-top: -20px;
+    /* background: url('http://maps.googleapis.com/maps/api/staticmap?center=Southshore%20Elementary,21032&zoom=13&size=2000x900&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&sensor=false&scale=2') no-repeat; */
+    background-size: 100% auto;
+}
+
+
+nav { 
+    -webkit-border-radius: 0px !important; 
+}
+
+#footer { 
+    background-color: black;
+    color: white;
+    padding: 5px 0 50px 0;
+}
+
+.logo.top {
+    max-height: 64px;
+    padding: 0;
+}
+
+.logo { 
+    margin: 8px 10px 0 0; 
+    padding: 0 20px 0 0;
+    max-height: 32px;
+}
+

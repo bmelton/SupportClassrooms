@@ -1,0 +1,91 @@
+<div id="map-canvas" ng-style="mapStyle">
+    <div class="container">
+        <div class="row" style="padding-top: 80px;">
+            <div class="col-lg-12 text-center">
+                <div id="map-search-div">
+                    <div class="input-group input-group-lg text-center">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                        <input type="text" class="form-control" placeholder="Search for another school">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="location-bar">
+    <div class="container">
+        <div class="row">
+            <div id="non-teaser" class="col-lg-1 col-md-1 col-sm-1">
+                <span style="font-size: 3em; color: white; margin-top: 40px;" class="glyphicon glyphicon-chevron-left"></span>
+            </div>
+            <div id="non-teaser" class="col-lg-10 col-md-10 col-sm-10">
+                <h1>{{ school.name }}</h1><h4>{{ school.city }}</h4>
+            </div>
+            <div id="non-teaser" class="col-lg-1 col-md-1 col-sm-1"></div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <br />
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="col-lg-12 thumbnail col-md-6">
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 list-header">
+                                <h1 class="list"><span class="glyphicon glyphicon-circle-arrow-down"></span> &nbsp;&nbsp; Category 1</h1>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top: 20px; color: #888;">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 thumbnail col-md-6">
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 list-header">
+                                <h1 class="list"><span class="glyphicon glyphicon-circle-arrow-down"></span> &nbsp;&nbsp; Category 2</h1>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top: 20px; color: #888;">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 thumbnail col-md-6">
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 list-header">
+                                <h1 class="list"><span class="glyphicon glyphicon-circle-arrow-down"></span> &nbsp;&nbsp; Category 3</h1>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top: 20px; color: #888;">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 thumbnail col-md-6">
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 list-header">
+                                <h4 class="list"><span class="glyphicon glyphicon-list"></span> &nbsp;&nbsp; List 1</h4>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top: 20px; color: #888;">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 thumbnail col-md-6">
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 list-header">
+                                <h4 class="list"><span class="glyphicon glyphicon-list"></span> &nbsp;&nbsp; List 2</h4>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top: 20px; color: #888;">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h2>{{ school.name }}</h2>
+                        <p>{{ school.address }}</p>
+                        <p>{{ school.address2 }}</p>
+                        <p>{{ school.city }}, {{ school.state }} {{ school.zipcode }}</p>
+                        <p ng-show="school.principal">Principal: {{ school.principal }}</p>
+                        <hr />
+                        <p ng-show="school.phone">Phone: {{ school.phone }}</p>
+                        <p ng-show="school.fax">Fax: {{ school.fax }}</p>
+                        <p ng-show="school.website"><a href="{{ school.website }}" target="_new">Website</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

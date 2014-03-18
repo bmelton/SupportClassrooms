@@ -1,0 +1,30 @@
+.sneak { 
+    left: -1000px;
+    width: 0;
+}
+
+#sliderBar { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: 1px;
+}
+
+#sliderBar.on { 
+    margin: 0; 
+}
+
+.logo.unsneak {
+    transition: all 0.6s ease;
+}
+
+.logo.sneak {
+    transition: all 0.6s ease;
+}
+
+#sliderBar, 
+#sliderBar.on { 
+    transition: all 0.1s ease;
+}

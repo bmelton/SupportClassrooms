@@ -19,7 +19,10 @@ v1_api.register(NewsResource())
 v1_api.register(SchoolResource())
 
 urlpatterns = patterns('',
-    url(r'^$', 'supportclassrooms.views.home', name='home'),
+    url(r'^$',                                          'supportclassrooms.views.home',                 name='home'),
+    url(r'^grades/$',                                   'supportclassrooms.views.grades',               name='grades'),
+    url(r'^api/schools/list/$',                         'supportclassrooms.views.list_schools',         name='list_schools'),
+    url(r'^api/schools/(?P<uuid>[-\w]+)/$',             'supportclassrooms.views.get_school',           name='get_school'),
 
     url(r'^search/',include('haystack.urls')),
     # (r'^search/', include('haystack.urls')),
