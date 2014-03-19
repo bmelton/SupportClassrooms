@@ -31,7 +31,7 @@ ul#about_nav.button-group li a.active {
 
 #teaser { 
     height: 200px;
-    padding: 20px 0;
+    padding: 20px 0 20px 0;
     margin: 0 auto 30px auto;
 }
 
@@ -118,6 +118,7 @@ container div.result.selected {
     background-color: #daf6b5;
     border: solid 1px #29671d;
 }
+
 .container div.result.selected:hover, 
 .selected:hover { 
     -webkit-border-radius: 3px; 

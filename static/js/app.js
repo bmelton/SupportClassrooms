@@ -6,6 +6,10 @@ App.config(function ($routeProvider) {
                 controller: 'IndexController',
                 templateUrl: '/static/partials/index.html'
             })
+        .when('/school/:id/:list', {
+                controller: 'ListController',
+                templateUrl: '/static/partials/list.html'
+            })
         .when('/school/:id', {
                 controller: 'SchoolController',
                 templateUrl: '/static/partials/school.html'
@@ -173,7 +177,7 @@ function globalController($scope) {
     $scope.selectIndex = 0;
 };
 
-controllers.SchoolController = function($scope, $http, $routeParams) { 
+controllers.ListController = function($scope, $http, $routeParams) { 
     var url = "/api/schools/" + $routeParams.id + "/";
     $http({method: 'GET', url: url})
         .success(function(data, status, headers, config) {
@@ -182,7 +186,67 @@ controllers.SchoolController = function($scope, $http, $routeParams) {
                 'background'        : 'url(' + $scope.school.background + ') no-repeat',
                 'background-size'   : '100% auto',
             };
-            console.log($scope.mapStyle);
+        });
+
+    var list_url    = "/api/lists/" + $routeParams.list + "/";
+    $http({method: 'GET', url: list_url})
+        .success(function(data, status, headers, config) { 
+            $scope.list = data;
+        });
+
+    var item_url    = "/api/items/list/" + $routeParams.list + "/";
+    $http({method: 'GET', url: item_url})
+        .success(function(data, status, headers, config) { 
+            $scope.items = data;
+        });
+
+    var checkout_url = "/api/checkout/" + $routeParams.list + "/";
+    $http({method: 'GET', url: checkout_url})
+        .success(function(data, status, headers, config) { 
+            $scope.checkout = data;
+        });
+
+    var checkout_url = "/api/checkout/" + $routeParams.list + "/";
+    
+}
+
+controllers.SchoolController = function($scope, $http, $routeParams) { 
+    $scope.getListsForCategory = function(school, category) { 
+        $scope.categoryTimeout = category;
+
+        if($scope.selectedCategory == category)
+            $scope.selectedCategory = null;
+        else
+            $scope.selectedCategory = category;
+
+        var list_url = "/api/lists/list/" + school + "/" + category + "/";
+        $http({method: 'GET', url: list_url})
+            .success(function(data, status, headers, config) {
+                $scope.lists_for_category = data;
+                $scope.categoryTimeout = null;
+            });
+    }
+
+    var url = "/api/schools/" + $routeParams.id + "/";
+    $http({method: 'GET', url: url})
+        .success(function(data, status, headers, config) {
+            $scope.school = data;
+            $scope.mapStyle = {
+                'background'        : 'url(' + $scope.school.background + ') no-repeat',
+                'background-size'   : '100% auto',
+            };
+        });
+
+    var category_url = "/api/categories/list/" + $routeParams.id + "/";
+    $http({method: 'GET', url: category_url})
+        .success(function(data, status, headers, config) { 
+            $scope.categories = data;
+        });
+
+    var list_url    = "/api/lists/list/" + $routeParams.id + "/";
+    $http({method: 'GET', url: list_url})
+        .success(function(data, status, headers, config) { 
+            $scope.lists = data;
         });
 }
 
