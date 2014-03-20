@@ -1,4 +1,20 @@
-<nav id="nav" data-sliderBar="true" data-sliderBarID="nav" class="navbar navbar-default" role="navigation">
+<style type="text/css">
+    #get_involved { 
+        margin: 0px 0 10px 0;
+        height: 30px;
+        padding: 0 auto 20px auto;
+        display: block;
+        -webkit-border-radius: 20px;
+    }
+
+    #get_involved_list { 
+        margin: 5px 0 0 0;
+        padding: 0;
+    }
+
+    #logo { margin: 0; padding: 0; }
+</style>
+<nav id="nav" class="navbar navbar-default" role="navigation" style="margin-bottom: 0;" >
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -11,28 +27,13 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><img class="logo sneak" src="/static/images/logo.png" /></li>
-                <li class="active"><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Schools <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/school/83473397/">South Shore Elementary</a></li>
-                        <li><a href="#/school/05c28dbd/">Southern High School</a></li>
-                        <li><a href="#/school/67cbdd48/">Old Mill Middle South</a></li>
-                        <li><a href="#/school/7ad0d4d5/">Old Mill Middle North</a></li>
-                        <li class="divider"></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown 2 <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
+                <li><a id="logo" href="/"><img class="logo" src="/static/images/logo.png" /></a></li>
+                <p class="navbar-text navbar-left" style="font-weight: bold; color: green;">SupportClassrooms</p>
+                <li><a href="#/back_to_school">Back to School Lists</a></li>
+                <li><a href="#/wish_lists">Teacher Wish Lists</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="get_involved_list"><a id="get_involved" class="btn btn-default" href="#/get_involved">Get Involved</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>

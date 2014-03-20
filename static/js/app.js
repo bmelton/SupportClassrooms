@@ -1,6 +1,6 @@
-var App = angular.module('App', ['restangular','ngRoute',]).controller('GlobalController', globalController);
+var App = angular.module('App', ['ngRoute',]).controller('GlobalController', globalController);
 
-App.config(function ($routeProvider) { 
+App.config(function ($routeProvider, $locationProvider) { 
     $routeProvider
         .when('/', { 
                 controller: 'IndexController',
@@ -48,21 +48,9 @@ App.config(function ($routeProvider) {
                 templateUrl: 'search.html'
             })
         .otherwise({ redirectTo: '/' });
-});
 
-App.config(function(RestangularProvider) {
-    RestangularProvider.setBaseUrl('/api/v1');
-    RestangularProvider.setRequestSuffix('');
-    RestangularProvider.setResponseExtractor(function(response, operation, what, url) {
-        var newResponse;
-        if (operation === "getList") {
-            newResponse = response.objects;
-            newResponse.metadata = response.meta;
-        } else {
-            newResponse = response.data;
-        }
-        return newResponse;
-    });
+        $locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('!');
 });
 
 App.directive('fixmouse', function() { 
@@ -250,62 +238,7 @@ controllers.SchoolController = function($scope, $http, $routeParams) {
         });
 }
 
-controllers.IndexController = function($scope, Restangular) { 
-    $scope.submitForm = function() { 
-        Restangular.all('schools/search/?q=' + $scope.name, {'q': $scope.name}).getList().then(function(schools) { 
-            $scope.schools = schools;
-            $scope.formSubmitted = true;
-        });
-    };
-
-    $scope.selectItem = function($index) { 
-        var el = $("#school_" + $index.id);
-        if(el.hasClass("selected"))
-            el.removeClass("selected");
-        else 
-            el.addClass("selected");
-        // $("#school_" + $index.id).addClass("selected");
-    };
-
-    $scope.fixMouse = function() { 
-        // $(".focused").removeClass("focused");
-        // console.log("FixMouse");
-    };
-}
-
-controllers.ResourcesController = function ($scope, Restangular) { 
-    Restangular.all('study').getList().then(function(resources) { 
-        $scope.resources = resources;
-    });
-}
-
-controllers.DirectorController = function ($scope, Restangular) { 
-    Restangular.all('directors').getList().then(function(directors) { 
-        $scope.directors = directors;
-    });
-}
-
-controllers.GlobalController = function($scope, Restangular) { 
-    $scope.selectIndex = 0;
-    $scope.selectingSchools = false;
-
-    // TODO - remove this.
-    Restangular.all('schools/search/?q=south').getList().then(function(schools) { 
-        $scope.schools = schools;
-        $scope.formSubmitted = true;
-    });
-}
-
-controllers.OfficerController = function($scope, Restangular) { 
-    Restangular.all('officers').getList().then(function(officers) { 
-        $scope.officers = officers;
-    });
-}
-
-controllers.NewsController = function($scope, Restangular) { 
-    Restangular.all('news').getList().then(function(news) { 
-        $scope.news = news;
-    });
+controllers.IndexController = function($scope) { 
 }
 
 App.controller(controllers);
