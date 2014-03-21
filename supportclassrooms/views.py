@@ -70,3 +70,10 @@ def get_list(request, list):
         return JSONResponse(serializer.data)
 
 
+@csrf_exempt
+def get_asin(request):
+    if request.method == "GET":
+        if request.GET.get("url"):
+            url = request.GET.get("url")
+            return HttpResponse(url)
+

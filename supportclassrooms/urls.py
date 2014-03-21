@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     url(r'^grades/$',                                               'supportclassrooms.views.grades',               name='grades'),
 
     # API Routes -- should not be fucked with. 
+    url(r'^api/checkout/get_item_for_asin/(?P<asin>[-\w]+)/$',      'amazon.views.get_item_for_asin'),
+    url(r'^api/checkout/get_asin/$',                                'amazon.views.get_asin'),
     url(r'^api/checkout/(?P<list>[\d]+)/$',                         'amazon.views.checkout_for_list'),
     # Schools
     url(r'^api/schools/list/$',                                     'supportclassrooms.views.list_schools',         name='list_schools'),
