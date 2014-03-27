@@ -48,7 +48,7 @@ class MasterItem(models.Model):
     type        = models.ForeignKey(Type)
     active      = models.BooleanField(default=True)
 
-    name        = models.CharField(max_length=80)
+    name        = models.CharField(max_length=255)
     url         = models.URLField()
     image       = models.URLField(null=True, blank=True)
     price       = models.CharField(max_length=20, null=True, blank=True)

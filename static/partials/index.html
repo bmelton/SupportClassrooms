@@ -1,7 +1,23 @@
 <style type="text/css">
+    a.green {
+        color: green;
+        font-size: 18px;
+    }
+    .btn {
+        -webkit-border-radius: 0 !important;
+           -moz-border-radius: 0 !important;
+                border-radius: 0 !important;
+    }
     section { 
         min-height: 100px;
         padding: 50px 0 120px 0;
+    }
+    section h3 { 
+        color: #666;
+        font-weight: light;
+        font-size: 22px;
+        line-height: 28px;
+        padding-top: 30px;
     }
 
     section.odd { 
@@ -9,10 +25,33 @@
         color: white;
     }
     
+    section.teal {
+        background: #0095b7;
+    }
+    section.white {
+        background-color: white;
+    }
+    section.nopad { 
+        padding: 0;
+        margin: 0;
+    }
+
+    section.header { 
+        height: 420px;
+    }
+    section.header h1, section.header h2, section.header h3 { 
+        color: white;
+        padding-top: 30px;
+    }
+    section.header p { 
+    }
+
     section.even {
-        background: #f7f3d3;
     }
     
+    section #top { 
+        background: #f7f3d3;
+    }
     .negmarg {
         margin-top: -100px;
         margin-bottom: -160px;
@@ -27,50 +66,71 @@
         <h4>And finish your back to school shopping in minutes</h4>
     </div>
 </section>
+<section class="white nopad">
+    <div class="container">
+        <div class="col-lg-3">
+            <img src="/static/images/back-to-school.png" />
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-8">
+            <h3>Support Classrooms is taking the headache out of back-to-school shopping and connecting ongoing classroom needs to parents and communities.</h3>
+        </div>
+    </div>
+</section>
+<section class="teal header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                
+            </div>
+            <div class="col-lg-6">
+                <h1>Parents</h1>
+                <p>Get your back to school lists online.</p>   
+            </div>
+        </div>
+    </div>
+</section>
 <section class="even">
-    <div class="container panel negmarg">
-        <h1>Back To School List</h1>
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
+    <div class="container panel negmarg" style="padding-top: 15px;">
+        <img src="http://placekitten.com/150/90" />
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>Back To School</h1>
+                <p>Get your back-to-school shopping done quickly and easily.  Rather than spending hours 
+                trudging through crowds in brick and mortar stores, or performing search after search 
+                online for each item in your back-to-school list, a few clicks on SupportClassrooms will 
+                get you everything on your child's list in a matter of minutes.  Search for your school 
+                to find your child's back-to-school list.</p>
 
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
+                <p><br />
+                    <a class="btn btn-success btn-lg" href="">Find Your Child's List</a>
+                </p>
 
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
-
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
-
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
-
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
-
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
-
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
-
-        <p>Lorem ipsum te nam congue vivendo cotideique, ut nihil albucius sapientem
-        his.  At agan nonummy splendide eam, in nam explicari prodesset conclusionemque, 
-        magna praesent mediocrem quo et.</p>
+                <p><br />
+                    <a class="green" href="">Add Your School</a>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-5 text-center"><img src="http://placekitten.com/238/218" /></div>
+                    <div class="col-lg-1">&nbsp;</div>
+                    <div class="col-lg-6 text-center"><img src="http://placekitten.com/238/218" /></div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
-<section id="top" class="odd">
-    <div class="container text-center">
-        <h1>Find your school's list</h1>
-        <h4>And finish your back to school shopping in minutes</h4>
+<section id="top" class="teal header odd">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                
+            </div>
+            <div class="col-lg-6">
+                <h1>Educators</h1>
+                <p>Let parents know what you need!</p>   
+            </div>
+        </div>
     </div>
 </section>
